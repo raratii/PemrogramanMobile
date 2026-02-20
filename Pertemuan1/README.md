@@ -28,7 +28,7 @@ yang menunjukkan bahwa semua komponen telah terinstal dengan baik.
 
 ### Screenshot
 
-![Screenshot](tugas1.jepg)
+![Screenshot](tugas1.jpeg)
 
 ---
 
