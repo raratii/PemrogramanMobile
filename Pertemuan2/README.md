@@ -94,5 +94,5 @@ late digunakan untuk memberitahu Dart bahwa variabel akan diinisialisasi nanti, 
 
 Jika tidak diisi sebelum dipakai
 
-![Late](img/soal4late-error.jpeg)
+![Late error](img/soal4late-error.jpeg)
 
