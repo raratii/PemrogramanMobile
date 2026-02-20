@@ -27,7 +27,7 @@ void main() {
 **Jawaban:**
 
 ![Jawaban](img/soal1.png)
-![output](img/output1.png)
+![output](img/output1.jpeg)
 
 ---
 
