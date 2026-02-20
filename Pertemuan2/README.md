@@ -79,20 +79,20 @@ Null Safety adalah fitur Dart yang mencegah variabel bernilai null secara tidak 
 
 Sejak Dart 2.12, variabel tidak boleh null kecuali ditandai dengan ?.
 
-![code](img/soal4.1.png)
-![Output](img/output4.1.png)
+![code](img/soal4.1.jpeg)
+![Output](img/output4.1.jpeg)
 
 Jika kode null safety dihilangkan, maka akan terjadi kesalahan compile karena variabel non-nullable tidak boleh tanpa nilai awal. Seperti hasil dibawah ini.
 
-![Null error](img/soal4.1error.png)
+![Null error](img/soal4.1error.jpeg)
 
 #### Late Variable
 
 late digunakan untuk memberitahu Dart bahwa variabel akan diinisialisasi nanti, tapi dijamin sebelum dipakai.
 
-![Late](img/soal4late.png)
+![Late](img/soal4late.jpeg)
 
 Jika tidak diisi sebelum dipakai
 
-![Late](img/soal4late-error.png)
+![Late](img/soal4late-error.jpeg)
 
