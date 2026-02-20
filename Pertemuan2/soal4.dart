@@ -1,4 +1,4 @@
 void main() {
-  String nama;
+  String? nama;
   print(nama);
 }
