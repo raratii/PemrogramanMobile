@@ -1,4 +1,4 @@
-# Laporan Praktikum #03 - Pemrograman Dasar Dart - Bag.2 (Control Flows dan Perulangan)
+# Laporan Praktikum 03 - Pemrograman Dasar Dart - Bag.2 (Control Flows dan Perulangan
 
 ## Identitas Mahasiswa
 
@@ -265,4 +265,4 @@ void main() {
 
 Output:
 
-![Output Tugas](img/tugas/result.png "Output Tugas")
+![Output Tugas](img/tugas.jpeg "Output Tugas")
