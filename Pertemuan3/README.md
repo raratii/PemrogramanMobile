@@ -265,4 +265,4 @@ void main() {
 
 Output:
 
-![Output Tugas](img/tugas/result.png "Output Tugas")
+![Output Tugas](img/tugas.jpeg "Output Tugas")
