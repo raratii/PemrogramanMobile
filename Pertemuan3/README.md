@@ -133,7 +133,7 @@ void main() {
 
 Output setelah diperbaiki:
 
-![Output Langkah 2](img/prak2/result1.png "Output Langkah 2")
+![Output Langkah 2](img/prak2/result1.jpeg "Output Langkah 2")
 
 ### Langkah 3
 
@@ -152,7 +152,7 @@ Kode di atas pada perulangan `do-while` akan melanjutkan perulangan dari nilai `
 
 Kode dan Output:
 
-![Output Langkah 3](img/prak2/result2.png "Output Langkah 3")
+![Output Langkah 3](img/prak2/result2.jpeg "Output Langkah 3")
 
 ---
 
@@ -195,7 +195,7 @@ void main() {
 ```
 Output Setelah Diperbaiki:
 
-![Output Langkah 2](img/prak3/result1.png "Output Langkah 2")
+![Output Langkah 2](img/prak3/result1.jpeg "Output Langkah 2")
 
 
 ### Langkah 3
@@ -233,7 +233,7 @@ Karena kondisi `index > 1 || index < 7` akan selalu bernilai `true` (karena `ind
 
 Output Setelah Diperbaiki:
 
-![Output Langkah 3](img/prak3/result2.png "Output Langkah 3")   
+![Output Langkah 3](img/prak3/result2.jpeg "Output Langkah 3")   
 
 ## Tugas: Buatlah sebuah program yang dapat menampilkan bilangan prima dari angka 0 sampai 201 menggunakan Dart. Ketika bilangan prima ditemukan, maka tampilkan nama lengkap dan NIM Anda.
 
