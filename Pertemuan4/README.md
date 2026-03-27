@@ -183,6 +183,7 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 ![Output Praktikum 4](img/pr4.jpeg)
 
 Terjadi error karena list 1 tidak ada, perbaikannya yaitu mengubah list1 menjadi list
+
 ![Output Praktikum 4](img/pr4.2.jpeg)
 
 **Langkah 3:**
@@ -199,14 +200,17 @@ print(list3.length);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki.
 
 Terjadi error karena belum ada deklarasi 'var' di awal list1
+
 ![Output Praktikum 4](img/pr4.3error.jpeg)
 
 Perbaikannya yaitu dengan menambahakan var di list1
+
 ![Output Praktikum 4](img/pr4.4.jpeg)
 
 Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya.
 
 Code & Output
+
 ![Output Praktikum 4](img/pr4.5.jpeg)
 
 
@@ -222,13 +226,16 @@ print(nav);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel `promoActive` ketika `true` dan `false`.
 
 Error karena var promoActive belum di deklarasikan
+
 ![Output Praktikum 4](img/pr4langkah4error.jpeg)
 
 Solusinya mendeklarasikan var promoActive
 Outpunya jika promoActive True
+
 ![Output Praktikum 4](img/pr4langlah4true.jpeg)
 
 Outpunya jika promoActive False
+
 ![Output Praktikum 4](img/pr4langkah4false.jpeg)
 
 **Langkah 5:**
@@ -243,13 +250,16 @@ print(nav2);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel `login` mempunyai kondisi lain.
 
 Error karena var login belum di deklarasikan
+
 ![Output Praktikum 4](img/pr4langkah5error.jpeg)
 
 Solusinya mendeklarasikan var Login dengan nilainya adalah manager
 Outpunya jika Login nilainya manager
+
 ![Output Praktikum 4](img/pr4langkah5manager.jpeg)
 
 Code dan output jika Login nilainya selain manager(user)
+
 ![Output Praktikum 4](img/pr4langkah5user.jpeg)
 
 **Langkah 6:**
@@ -266,6 +276,7 @@ print(listOfStrings);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Jelaskan manfaat **Collection For** dan dokumentasikan hasilnya.
 
 Tidak terjadi error
+
 ![Output Praktikum 4](img/pr4last.jpeg)
 
 Collection For pada Dart memungkinkan penambahan elemen ke koleksi (list/set/map) secara langsung menggunakan perulangan di dalam deklarasi, sehingga kode lebih ringkas dan mudah dibaca dibandingkan menambah elemen list menggunakan loop di luar deklarasi
@@ -304,9 +315,11 @@ Tambahkan kode program berikut di luar scope `void main()`, lalu coba eksekusi (
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Gunakan fungsi `tukar()` di dalam `main()` sehingga tampak jelas proses pertukaran value field di dalam Record.
 
 Tidak ada error, tetapi outpunya masih sama seperti no 2
+
 ![Output Praktikum 5](img/pr5langkah3.jpeg)
 
 Setelah menggunakan fungsi tukar dalam main, codenya begini
+
 ![Output Praktikum 5](img/pr5langkah3.1.jpeg)
 
 **Langkah 4:**
@@ -321,13 +334,9 @@ print(mahasiswa);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Inisialisasi field nama dan NIM Anda pada variabel record `mahasiswa` di atas. Dokumentasikan hasilnya dan buat laporannya!
 
 Terjadi error karena data mahasiswa belum di isi
+
 ![Output Praktikum 5](img/pr5langkah4)
 
-Kode setelah data mahasiswa di isi
-![Output Praktikum 5](img/tipeDatarecord5.png)
-
-Outputnya
-![Output Praktikum 5](img/tipeDatarecordOutput2.png)
 
 **Langkah 5:**
 
@@ -343,9 +352,11 @@ print(mahasiswa2.$2); // Prints 'last'
 Apa yang terjadi jika terjadi error, silakan perbaiki. Gantilah salah satu isi record dengan nama dan NIM Anda, lalu dokumentasikan hasilnya dan buat laporannya!
 
 Tidak terjadi error, output sesuai dengan contoh
+
 ![Output Praktikum 5](img/pr5langkah5.jpeg)
 
 Kode dan Output setelah satu record di ganti nama dan nim
+
 ![Output Praktikum 5](img/pr5langkah5.1.jpeg)
 
 
