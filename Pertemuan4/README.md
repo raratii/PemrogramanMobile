@@ -149,7 +149,7 @@ nobleGases[18] = 'argon';
 Apa yang terjadi? Jika terjadi error, silakan perbaiki.
 
 data fifth pada gifts yang awalnya '1' berubah jadi 'golden rings', dan data 18 pada nobleGases yang awalnya '2' berubah jadi 'argon' 
-![Output Praktikum 3](img/pr3.2)
+![Output Praktikum 3](img/pr3.2.jpeg)
 
 Tambahkan elemen nama dan NIM Anda pada tiap variabel di atas (`gifts`, `nobleGases`, `mhs1`, dan `mhs2`).
 Dokumentasikan hasilnya dan buat laporannya.
@@ -185,9 +185,6 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 Terjadi error karena list 1 tidak ada, perbaikannya yaitu mengubah list1 menjadi list
 ![Output Praktikum 4](img/pr4.2.jpeg)
 
-dan outpunya yaitu
-![Output Praktikum 4](img/)
-
 **Langkah 3:**
 
 Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
@@ -202,21 +199,16 @@ print(list3.length);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki.
 
 Terjadi error karena belum ada deklarasi 'var' di awal list1
-![Output Praktikum 4](img/Spread_CFO2.png)
+![Output Praktikum 4](img/pr4.3error.jpeg)
 
 Perbaikannya yaitu dengan menambahakan var di list1
-![Output Praktikum 4](img/Spread_CFO3.png)
-
-dan outputnya yaitu
-![Output Praktikum 4](img/Spread_CFO_Output1.png)
+![Output Praktikum 4](img/pr4.4.jpeg)
 
 Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya.
 
-Codenya
-![Output Praktikum 4](img/Spread_CFO4.png)
+Code & Output
+![Output Praktikum 4](img/pr4.5.jpeg)
 
-Outputnya
-![Output Praktikum 4](img/Spread_CFO_Output2.png)
 
 **Langkah 4:**
 
@@ -230,16 +222,14 @@ print(nav);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel `promoActive` ketika `true` dan `false`.
 
 Error karena var promoActive belum di deklarasikan
-![Output Praktikum 4](img/Spread_CFO5.png)
+![Output Praktikum 4](img/pr4langkah4error.jpeg)
 
 Solusinya mendeklarasikan var promoActive
-![Output Praktikum 4](img/Spread_CFO6.png)
-
 Outpunya jika promoActive True
-![Output Praktikum 4](img/Spread_CFO_Output3.png)
+![Output Praktikum 4](img/pr4langlah4true.jpeg)
 
 Outpunya jika promoActive False
-![Output Praktikum 4](img/Spread_CFO_Output4.png)
+![Output Praktikum 4](img/pr4langkah4false.jpeg)
 
 **Langkah 5:**
 
@@ -253,19 +243,14 @@ print(nav2);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel `login` mempunyai kondisi lain.
 
 Error karena var login belum di deklarasikan
-![Output Praktikum 4](img/Spread_CFO7.png)
+![Output Praktikum 4](img/pr4langkah5error.jpeg)
 
 Solusinya mendeklarasikan var Login dengan nilainya adalah manager
-![Output Praktikum 4](img/Spread_CFO8.png)
-
 Outpunya jika Login nilainya manager
-![Output Praktikum 4](img/Spread_CFO_Output5.png)
+![Output Praktikum 4](img/pr4langkah5manager.jpeg)
 
-Code jika Login nilainya selain manager(user)
-![Output Praktikum 4](img/Spread_CFO9.png)
-
-Outpunya jika Login nilainya selain manager(user)
-![Output Praktikum 4](img/Spread_CFO_Output6.png)
+Code dan output jika Login nilainya selain manager(user)
+![Output Praktikum 4](img/pr4langkah5user.jpeg)
 
 **Langkah 6:**
 
@@ -281,7 +266,7 @@ print(listOfStrings);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Jelaskan manfaat **Collection For** dan dokumentasikan hasilnya.
 
 Tidak terjadi error
-![Output Praktikum 4](img/Spread_CFO_output7.png)
+![Output Praktikum 4](img/pr4last.jpeg)
 
 Collection For pada Dart memungkinkan penambahan elemen ke koleksi (list/set/map) secara langsung menggunakan perulangan di dalam deklarasi, sehingga kode lebih ringkas dan mudah dibaca dibandingkan menambah elemen list menggunakan loop di luar deklarasi
 
@@ -293,24 +278,16 @@ Ketik atau salin kode program berikut ke dalam fungsi `main()`.
 
 ```dart
 var record = ('first', a: 2, b: true, 'last');
-print(record)
+print(record);
 ```
 
 **Langkah 2:**
 
 Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
 
-![Output Praktikum 5](img/tipeDatarecord.png)
+Code & Output
 
-Terjadi error karena pada code kurang menambahkan ";" pada akhir print(record)
-
-perbaikannya yaitu menambahkan ";" pada akhir print(record)
-
-![Output Praktikum 5](img/tipeDatarecord1.png)
-
-Outputnya
-
-![Output Praktikum 5](img/tipeDatarecordOutput.png)
+![Output Praktikum 5](img/pr5langkah2.jpeg)
 
 Program akan menampilkan seluruh isi record ke layar, yaitu 'first' dan 'last' sebagai data berurutan, serta a: 2 dan b: true sebagai data bernama.
 
@@ -327,13 +304,10 @@ Tambahkan kode program berikut di luar scope `void main()`, lalu coba eksekusi (
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Gunakan fungsi `tukar()` di dalam `main()` sehingga tampak jelas proses pertukaran value field di dalam Record.
 
 Tidak ada error, tetapi outpunya masih sama seperti no 2
-![Output Praktikum 5](img/tipeDatarecord2.png)
+![Output Praktikum 5](img/pr5langkah3.jpeg)
 
 Setelah menggunakan fungsi tukar dalam main, codenya begini
-![Output Praktikum 5](img/tipeDatarecord3.png)
-
-Outputnya
-![Output Praktikum 5](img/tipeDatarecordOutput1.png)
+![Output Praktikum 5](img/pr5langkah3.1.jpeg)
 
 **Langkah 4:**
 
@@ -347,7 +321,7 @@ print(mahasiswa);
 Apa yang terjadi? Jika terjadi error, silakan perbaiki. Inisialisasi field nama dan NIM Anda pada variabel record `mahasiswa` di atas. Dokumentasikan hasilnya dan buat laporannya!
 
 Terjadi error karena data mahasiswa belum di isi
-![Output Praktikum 5](img/tipeDatarecord4.png)
+![Output Praktikum 5](img/pr5langkah4)
 
 Kode setelah data mahasiswa di isi
 ![Output Praktikum 5](img/tipeDatarecord5.png)
@@ -369,13 +343,11 @@ print(mahasiswa2.$2); // Prints 'last'
 Apa yang terjadi jika terjadi error, silakan perbaiki. Gantilah salah satu isi record dengan nama dan NIM Anda, lalu dokumentasikan hasilnya dan buat laporannya!
 
 Tidak terjadi error, output sesuai dengan contoh
-![Output Praktikum 5](img/tipeDatarecord6.png)
+![Output Praktikum 5](img/pr5langkah5.jpeg)
 
-Kode setelah satu record di ganti nama dan nim
-![Output Praktikum 5](img/tipeDatarecord7.png)
+Kode dan Output setelah satu record di ganti nama dan nim
+![Output Praktikum 5](img/pr5langkah5.1.jpeg)
 
-Outputnya
-![Output Praktikum 5](img/tipeDatarecordOutput3.png)
 
 # Soal 2
 Jelaskan yang dimaksud Functions dalam bahasa Dart!
