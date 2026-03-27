@@ -335,7 +335,7 @@ Apa yang terjadi? Jika terjadi error, silakan perbaiki. Inisialisasi field nama 
 
 Terjadi error karena data mahasiswa belum di isi
 
-![Output Praktikum 5](img/pr5langkah4)
+![Output Praktikum 5](img/pr5langkah4.jpeg)
 
 
 **Langkah 5:**
