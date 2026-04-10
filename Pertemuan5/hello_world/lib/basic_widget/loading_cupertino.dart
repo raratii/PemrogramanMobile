@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+void main() {
+  runApp(const LoadingCupertino());
+}
+
 class LoadingCupertino extends StatelessWidget {
   const LoadingCupertino({super.key});
 
@@ -12,13 +16,13 @@ class LoadingCupertino extends StatelessWidget {
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
             CupertinoButton(
-              child: const Text("Contoh button"),
-              onPressed: () {},
+              child: Text("Contoh button"),
+              onPressed: null,
             ),
-            const SizedBox(height: 20),
-            const CupertinoActivityIndicator(),
+            SizedBox(height: 10),
+            CupertinoActivityIndicator(),
           ],
         ),
       ),

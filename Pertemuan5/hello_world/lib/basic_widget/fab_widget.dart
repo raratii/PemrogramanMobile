@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const FabWidget());
+}
+
 class FabWidget extends StatelessWidget {
   const FabWidget({super.key});
 
@@ -8,9 +12,7 @@ class FabWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print("FAB ditekan");
-          },
+          onPressed: () {},
           backgroundColor: Colors.pink,
           child: const Icon(Icons.thumb_up),
         ),
