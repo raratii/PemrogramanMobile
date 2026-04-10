@@ -15,7 +15,7 @@
 Selesaikan Praktikum 1 sampai 5, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file `README.md`!
 
 ### Praktikum 1
-![Output Praktikum 1](img/p1l4.jpeg)
+![Output Praktikum 1](pertemuan5/img/p1l4.jpeg)
 
 ### Praktikum 2
 ![Output Praktikum2](img/p2.jpeg)
