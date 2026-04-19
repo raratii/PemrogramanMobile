@@ -22,11 +22,7 @@ Selesaikan Praktikum 1 sampai 5, lalu dokumentasikan dan push ke repository Anda
 ![Output Praktikum2](img/p2.2.jpeg)
 
 ### Praktikum 3
-**Github:**
-![Output Praktikum 3](img/praktikum3_1.jpeg)
-
-**Laporan images:**
-![Output Praktikum 3](img/praktikum3.jpeg)
+**Sudah Buat**
 
 ### Praktikum 4
 **Langkah 1 Text Widget**
