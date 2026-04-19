@@ -40,7 +40,7 @@ Selesaikan Praktikum 1 sampai 5, lalu dokumentasikan dan push ke repository Anda
 ### Praktikum 5
 **Langkah 1: Cupertino Button dan Loading Bar**
 
-![Output Praktikum 5](img/p5l.jpeg)
+![Output Praktikum 5](img/p5loading.jpeg)
 
 **Langkah 2: Floating Action Button (FAB)**
 
