@@ -96,6 +96,7 @@ Selesaikan [Codelabs: Your first Flutter app](https://codelabs.developers.google
 
 **Menempatkan UI di tengah**
 ![Output codelabs](img/codelabs5center.jpeg)
+![Output codelabs](img/codelabs6textgone.jpeg)
 
 '''import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
@@ -168,7 +169,7 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
-    '''return Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, // ← Add this.
@@ -185,22 +186,680 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-}'''
-![Output codelabs](img/codelabs6textgone.jpeg)
+}
+'''
 
 **Menambahkan Tombol**
 ![Output codelabs](img/codelabs6like.jpeg)
 
-**Menambahkan Kolom samping navifgasi**
+'''import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+// ...
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
+
+  // ↓ Add the code below.
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
+}
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+  final WordPair pair;
+
+// ...
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        // ↓ Change this line.
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+}
+
+// ...
+
+// ...
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    // ↓ Add this.
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BigCard(pair: pair),
+            SizedBox(height: 10),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ↓ And this.
+                ElevatedButton.icon(
+                  onPressed: () {
+                    appState.toggleFavorite();
+                  },
+                  icon: Icon(icon),
+                  label: Text('Like'),
+                ),
+                SizedBox(width: 10),
+
+                ElevatedButton(
+                  onPressed: () {
+                    appState.getNext();
+                  },
+                  child: Text('Next'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+'''
+
+**Menambahkan Kolom samping navifgasi**
 ![Output codelabs](img/codelabs6home.jpeg)
+
+'''import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+// ...
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
+
+  // ↓ Add the code below.
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
+}
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+  final WordPair pair;
+
+// ...
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        // ↓ Change this line.
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text('Home'),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.favorite),
+                  label: Text('Favorites'),
+                ),
+              ],
+              selectedIndex: 0,
+              onDestinationSelected: (value) {
+                print('selected: $value');
+              },
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: GeneratorPage(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class GeneratorPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BigCard(pair: pair),
+          SizedBox(height: 10),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  appState.toggleFavorite();
+                },
+                icon: Icon(icon),
+                label: Text('Like'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  appState.getNext();
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}'''
 ![Output codelabs](img/codelabs7fav.jpeg)
+
+'''import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+// ...
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
+
+  // ↓ Add the code below.
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
+}
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+  final WordPair pair;
+
+// ...
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        // ↓ Change this line.
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+}
+
+// ...
+
+// ...
+
+// ...
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+// ...
+
+class _MyHomePageState extends State<MyHomePage> {
+  var selectedIndex = 0; // ← Add this property.
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text('Home'),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.favorite),
+                  label: Text('Favorites'),
+                ),
+              ],
+              selectedIndex: selectedIndex, // ← Change to this.
+              onDestinationSelected: (value) {
+                // ↓ Replace print with this.
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: GeneratorPage(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class GeneratorPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BigCard(pair: pair),
+          SizedBox(height: 10),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  appState.toggleFavorite();
+                },
+                icon: Icon(icon),
+                label: Text('Like'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  appState.getNext();
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+'''
 ![Output codelabs](img/codelabs8home.jpeg)
 
 **Menggunakan SelectedIndex**
 ![Output codelabs](img/codelabs8like.jpeg)
 
+''' import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+// ...
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
+
+  // ↓ Add the code below.
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
+}
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+  final WordPair pair;
+
+// ...
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        // ↓ Change this line.
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+}
+
+// ...
+
+// ...
+
+// ...
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+// ...
+
+// ...
+
+class _MyHomePageState extends State<MyHomePage> {
+  var selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = GeneratorPage();
+        break;
+      case 1:
+        page = Placeholder();
+        break;
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text('Home'),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.favorite),
+                  label: Text('Favorites'),
+                ),
+              ],
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: page, // ← Here.
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class GeneratorPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    IconData icon;
+    if (appState.favorites.contains(pair)) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
+
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BigCard(pair: pair),
+          SizedBox(height: 10),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  appState.toggleFavorite();
+                },
+                icon: Icon(icon),
+                label: Text('Like'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  appState.getNext();
+                },
+                child: Text('Next'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+'''
 **Tingkat Respon**
+kalo extended nya true, di HP bakal munculgarapi, tp.kalo di tablet atau laptop tampilannya bakal rapi. kalo extendnya false akan tampil rapi tanpa tulisan home dan favorite di HP 
 ![Output codelabs](img/codelabs9extendfalse.jpeg)
 ![Output codelabs](img/extendfalse.jpeg)
 ![Output codelabs](img/extendfav+.jpeg)
