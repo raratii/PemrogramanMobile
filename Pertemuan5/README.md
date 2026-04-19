@@ -63,30 +63,150 @@ Selesaikan Praktikum 1 sampai 5, lalu dokumentasikan dan push ke repository Anda
 ## Soal 2
 Selesaikan Praktikum 2 dan Anda wajib menjalankan aplikasi hello_world pada perangkat fisik (device Android/iOS) agar Anda mempunyai pengalaman untuk menghubungkan ke perangkat fisik. Capture hasil aplikasi di perangkat, lalu buatlah laporan praktikum pada file `README.md`.
 
-### Praktikum 2
-![Output Praktikum 2](img/praktikum2.jpeg)
-
 ## Soal 3
 Pada praktikum 5 mulai dari Langkah 3 sampai 6, buatlah file widget tersendiri di folder `basic_widgets`, kemudian pada file `main.dart` cukup melakukan import widget sesuai masing-masing langkah tersebut!
 
 **Langkah 3: Scaffold Widget**
 
-![Output Praktikum 5](img/praktikum5_3.jpeg)
+![Output Praktikum 5](img/button.gif)
 
 **Langkah 4: Dialog Widget**
 
-![Output Praktikum 5](img/praktikum5_4.gif)
+![Output Praktikum 5](img/popup.gif)
 
 **Langkah 5: Input dan Selection Widget**
 
-![Output Praktikum 5](img/praktikum5_5.gif)
+![Output Praktikum 5](img/textfield.gif)
 
 **Langkah 6: Date and Time Pickers**
 
-![Output Praktikum 5](img/praktikum5_6.gif)
+![Output Praktikum 5](img/date.gif)
 
 ## Soal 4
 Selesaikan [Codelabs: Your first Flutter app](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1), lalu buatlah laporan praktikumya dan push ke repository GitHub Anda!
+
+**Menambah tombol**
+![Output codelabs](img/codelabs1.jpeg)
+![Output codelabs](img/codelabs2.jpeg)
+![Output codelabs](img/codelabs22.jpeg)
+
+**memperindah tampilan, tema dan gaya**
+![Output codelabs](img/codelabs3.jpeg)
+![Output codelabs](img/codelabs4.jpeg)
+
+**Menempatkan UI di tengah**
+![Output codelabs](img/codelabs5center.jpeg)
+
+'''import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
+}
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+  final WordPair pair;
+
+// ...
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        // ↓ Change this line.
+        child: Text(pair.asLowerCase, style: style),
+      ),
+    );
+  }
+}
+
+// ...
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;
+
+    '''return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // ← Add this.
+          children: [
+            BigCard(pair: pair),
+            ElevatedButton(
+              onPressed: () {
+                appState.getNext();
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}'''
+![Output codelabs](img/codelabs6textgone.jpeg)
+
+**Menambahkan Tombol**
+![Output codelabs](img/codelabs6like.jpeg)
+
+**Menambahkan Kolom samping navifgasi**
+
+![Output codelabs](img/codelabs6home.jpeg)
+![Output codelabs](img/codelabs7fav.jpeg)
+![Output codelabs](img/codelabs8home.jpeg)
+
+**Menggunakan SelectedIndex**
+![Output codelabs](img/codelabs8like.jpeg)
+
+**Tingkat Respon**
+![Output codelabs](img/codelabs9extendfalse.jpeg)
+![Output codelabs](img/extendfalse.jpeg)
+![Output codelabs](img/extendfav+.jpeg)
+![Output codelabs](img/codelabs9extendtrue.jpeg)
+![Output codelabs](img/codelabs9truefav.jpeg)
+
 
 ## Soal 5
 `README.md` berisi: capture hasil akhir tiap praktikum (*side-by-side*, bisa juga berupa file GIF agar terlihat proses perubahan ketika ada aksi dari pengguna) dengan menampilkan NIM dan Nama Anda sebagai ciri pekerjaan Anda.
